@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Okurman</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #f0f0f0;
+      padding-bottom: 80px;
+    }
+    .Okurman-text {
+      background-color: rgb(255, 204, 0);
+      border-radius: 25px;
+      border: 5px inset black;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 40px;
+    }
+    h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-top: 40px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .add {
+      padding: 40px 20px;
+      background-color: rgba(127, 255, 212, 0.273);
+      border-radius: 50px;
+      box-shadow: 2px 2px 10px rgba(61, 61, 61, 0.582);
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .Js, .Html, .css {
+      width: 350px;
+      background-color: rgba(19, 165, 184, 0.6);
+      border-radius: 25px;
+      padding: 20px;
+      color: white;
+      animation: fadeInUp 0.8s ease-out forwards;
+      clip-path: polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%);
+      transition: 0.4s ease;
+    }
+    .Html { background-color: rgba(227, 239, 0, 0.6); }
+    .css { background-color: rgba(40, 250, 180, 0.6); }
+    .Js:hover, .Html:hover, .css:hover {
+      border-radius: 50px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+    img {
+      width: 60px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    h4 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    span {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    h5 {
+      font-size: 18px;
+      margin: 40px auto;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeInUp 1s ease-out forwards;
+    }
+    #toggleLang {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+    .poradok {
+      width: 100%;
+      background-color: rgba(82, 255, 197, 0.219);
+      border-radius: 50px;
+      margin-top: 25px;
+      box-shadow: 2px 2px 10px rgba(61, 61, 61, 0.582);
+      text-align: center;
+      padding: 20px;
+    }
+    #Por2:hover {
+      box-shadow: 4px 4px 10px white;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 28px; }
+      .Js, .Html, .css { width: 90%; }
+      h4, p, span { font-size: 16px; }
+      h5 { font-size: 16px; padding: 10px; }
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    #Por2 {
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 20px;
+  transition: 0.3s;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Дополнительная адаптация */
+@media (max-width: 768px) {
+  #Por2 {
+    width: 90%;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="Okurman-text">
+    <h1 id="main-title">Okurman-IT</h1>
+  </div>
+
+  <div class="add">
+    <h2 id="learn-title">Чему вы научитесь?</h2>
+    <div class="card-container">
+      <div class="Js">
+        <img src="javascript.png" alt="javascript" />
+        <h4 id="js-title">- JavaScript</h4>
+        <p id="js-desc"><span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.</p>
+      </div>
+      <div class="Html">
+        <img src="html-logo.png" alt="HTML" />
+        <h4 id="html-title">- HTML</h4>
+        <p id="html-desc"><span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!</p>
+      </div>
+      <div class="css">
+        <img src="css.png" alt="CSS" />
+        <h4 id="css-title">- CSS</h4>
+        <p id="css-desc"><span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!</p>
+      </div>
+    </div>
+
+    <h5 id="summary">HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.</h5>
+    <h2 id="months-title">За 6 Месяцев</h2>
+  </div>
+
+  <div class="poradok">
+    <h1 id="por1">По какому порядку вам изучать Frontend программу?</h1>
+    <img id="Por2" src="2025-05-29_20-01-16.png" alt=""/>
+  </div>
+
+  <button id="toggleLang">Кыргызча</button>
+
+  <script>
+    let isRussian = true;
+
+    document.getElementById('toggleLang').addEventListener('click', () => {
+      isRussian = !isRussian;
+      document.getElementById('toggleLang').innerText = isRussian ? 'Кыргызча' : 'Русский';
+
+      document.getElementById('main-title').innerText = 'Okurman-IT';
+      document.getElementById('learn-title').innerText = isRussian ? 'Чему вы научитесь?' : 'Сиз эмнени үйрөнөсүз?';
+      document.getElementById('js-title').innerText = isRussian ? '- JavaScript' : '- ЖаваСкрипт';
+      document.getElementById('html-title').innerText = '- HTML';
+      document.getElementById('css-title').innerText = '- CSS';
+
+      document.getElementById('js-desc').innerHTML = isRussian
+        ? '<span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.'
+        : '<span>Эмне үчүн JavaScript үйрөнүү керек?</span>JavaScript веб-сайттарды жандуу кылат — анын жардамы менен анимациялар, оюндар, баскычтар жана колдонмолорду түзө аласыз. Бул баштоо үчүн жөнөкөй жана IT дүйнөсүндө талап кылынган тил.';
+
+      document.getElementById('html-desc').innerHTML = isRussian
+        ? '<span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!'
+        : '<span>Эмне үчүн HTML үйрөнүү керек?</span>HTML — бул ар бир сайттын негизги бөлүгү. Ал текст, сүрөттөр, баскычтар жана башка элементтерди жайгаштырууга жардам берет. HTMLсиз веб-сайт болбойт!';
+
+      document.getElementById('css-desc').innerHTML = isRussian
+        ? '<span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!'
+        : '<span>Эмне үчүн CSS үйрөнүү керек?</span>CSS — бул кооздук жана дизайн. Ал веб-сайттарды көрктүү, ыңгайлаштырылган жана жандуу кылат. CSS болбосо, бардыгы боз жана кызыксыз болмок!';
+
+      document.getElementById('summary').innerText = isRussian
+        ? 'HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.'
+        : 'HTML, CSS жана JavaScript — ар бир веб-сайттын негизи. HTML түзүмдү түзөт, CSS стилди жана кооздукту берет, ал эми JavaScript интерактивдүүлүк жана жан берет. Алар чогуу идеяларды кооз жана иштеген веб-тиркемелерге айландырат.';
+
+      document.getElementById('months-title').innerText = isRussian ? 'За 6 Месяцев' : '6 айдын ичинде';
+
+      document.getElementById('por1').innerText = isRussian
+        ? 'По какому порядку вам изучать Frontend программу?'
+        : 'Frontend программасын кайсы тартипте үйрөнүү керек?';
+    });
+  </script>
+</body>
+</html>
