@@ -14,7 +14,7 @@
     }
     body {
       background: #f0f0f0;
-      padding-bottom: 80px;
+      padding-bottom: 100px;
     }
     .Okurman-text {
       background-color: rgb(255, 204, 0);
@@ -23,9 +23,7 @@
       padding: 20px;
       text-align: center;
     }
-    h1 {
-      font-size: 40px;
-    }
+    h1 { font-size: 40px; }
     h2 {
       font-size: 36px;
       text-align: center;
@@ -88,20 +86,6 @@
       text-align: center;
       animation: fadeInUp 1s ease-out forwards;
     }
-    #toggleLang {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 10px;
-  border: none;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  z-index: 999;
-}
-
     .poradok {
       width: 100%;
       background-color: rgba(82, 255, 197, 0.219);
@@ -120,6 +104,11 @@
       .Js, .Html, .css { width: 90%; }
       h4, p, span { font-size: 16px; }
       h5 { font-size: 16px; padding: 10px; }
+      #Por2 {
+        width: 90%;
+        max-width: 100%;
+        border-radius: 15px;
+      }
     }
     @keyframes fadeInUp {
       to {
@@ -127,98 +116,122 @@
         transform: translateY(0);
       }
     }
-
     #Por2 {
-  width: 80%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 20px;
-  transition: 0.3s;
-  margin: 0 auto;
-  display: block;
-}
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 20px;
+      transition: 0.3s;
+      margin: 0 auto;
+      display: block;
+    }
 
-/* Дополнительная адаптация */
-@media (max-width: 768px) {
-  #Por2 {
-    width: 90%;
-    max-width: 100%;
-    border-radius: 15px;
-  }
-}
-
+    /* Chatbot styles */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 999;
+    }
+    #chatbox {
+      height: 200px;
+      overflow-y: auto;
+      padding: 10px;
+      font-size: 14px;
+    }
+    #userInput {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+    #inputField {
+      flex: 1;
+      border: none;
+      padding: 10px;
+      font-size: 14px;
+    }
+    #sendBtn {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <div class="Okurman-text">
-    <h1 id="main-title">Okurman-IT</h1>
+    <h1>Okurman-IT</h1>
   </div>
 
   <div class="add">
-    <h2 id="learn-title">Чему вы научитесь?</h2>
+    <h2>Чему вы научитесь?</h2>
     <div class="card-container">
       <div class="Js">
         <img src="javascript.png" alt="javascript" />
-        <h4 id="js-title">- JavaScript</h4>
-        <p id="js-desc"><span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.</p>
+        <h4>- JavaScript</h4>
+        <p><span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.</p>
       </div>
       <div class="Html">
         <img src="html-logo.png" alt="HTML" />
-        <h4 id="html-title">- HTML</h4>
-        <p id="html-desc"><span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!</p>
+        <h4>- HTML</h4>
+        <p><span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!</p>
       </div>
       <div class="css">
         <img src="css.png" alt="CSS" />
-        <h4 id="css-title">- CSS</h4>
-        <p id="css-desc"><span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!</p>
+        <h4>- CSS</h4>
+        <p><span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!</p>
       </div>
     </div>
-
-    <h5 id="summary">HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.</h5>
-    <h2 id="months-title">За 6 Месяцев</h2>
+    <h5>HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.</h5>
+    <h2>За 6 Месяцев</h2>
   </div>
 
   <div class="poradok">
-    <h1 id="por1">По какому порядку вам изучать Frontend программу?</h1>
-    <img id="Por2" src="2025-05-29_20-01-16.png" alt=""/>
+    <h1>По какому порядку вам изучать Frontend программу?</h1>
+    <img id="Por2" src="2025-05-29_20-01-16.png" alt="" />
   </div>
 
-  <button id="toggleLang">Кыргызча</button>
+  <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/05/29/15/20250529151351-FOBFZWP4.js"></script>
+      
 
   <script>
-    let isRussian = true;
+    const chatbox = document.getElementById('chatbox');
+    const inputField = document.getElementById('inputField');
+    const sendBtn = document.getElementById('sendBtn');
 
-    document.getElementById('toggleLang').addEventListener('click', () => {
-      isRussian = !isRussian;
-      document.getElementById('toggleLang').innerText = isRussian ? 'Кыргызча' : 'Русский';
+    sendBtn.onclick = () => {
+      const userText = inputField.value.trim();
+      if (!userText) return;
 
-      document.getElementById('main-title').innerText = 'Okurman-IT';
-      document.getElementById('learn-title').innerText = isRussian ? 'Чему вы научитесь?' : 'Сиз эмнени үйрөнөсүз?';
-      document.getElementById('html-title').innerText = '- HTML';
-      document.getElementById('css-title').innerText = '- CSS';
+      appendMessage('Вы', userText);
+      respondToUser(userText.toLowerCase());
+      inputField.value = '';
+    };
 
-      document.getElementById('js-desc').innerHTML = isRussian
-        ? '<span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.'
-        : '<span>Эмне үчүн JavaScript үйрөнүү керек?</span>JavaScript веб-сайттарды жандуу кылат — анын жардамы менен анимациялар, оюндар, баскычтар жана колдонмолорду түзө аласыз. Бул баштоо үчүн жөнөкөй жана IT дүйнөсүндө талап кылынган тил.';
+    function appendMessage(sender, text) {
+      chatbox.innerHTML += `<p><strong>${sender}:</strong> ${text}</p>`;
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
 
-      document.getElementById('html-desc').innerHTML = isRussian
-        ? '<span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!'
-        : '<span>Эмне үчүн HTML үйрөнүү керек?</span>HTML — бул ар бир сайттын негизги бөлүгү. Ал текст, сүрөттөр, баскычтар жана башка элементтерди жайгаштырууга жардам берет. HTMLсиз веб-сайт болбойт!';
+    function respondToUser(message) {
+      let response = 'Извините, я не понимаю 😢';
 
-      document.getElementById('css-desc').innerHTML = isRussian
-        ? '<span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!'
-        : '<span>Эмне үчүн CSS үйрөнүү керек?</span>CSS — бул кооздук жана дизайн. Ал веб-сайттарды көрктүү, ыңгайлаштырылган жана жандуу кылат. CSS болбосо, бардыгы боз жана кызыксыз болмок!';
+      if (message.includes('привет')) response = 'Привет! Чем могу помочь?';
+      else if (message.includes('что ты умеешь')) response = 'Я могу рассказать про HTML, CSS и JavaScript!';
+      else if (message.includes('пока')) response = 'Пока! Хорошего дня!';
+      else if (message.includes('окурман')) response = 'Это обучающий сайт по программированию!';
 
-      document.getElementById('summary').innerText = isRussian
-        ? 'HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.'
-        : 'HTML, CSS жана JavaScript — ар бир веб-сайттын негизи. HTML түзүмдү түзөт, CSS стилди жана кооздукту берет, ал эми JavaScript интерактивдүүлүк жана жан берет. Алар чогуу идеяларды кооз жана иштеген веб-тиркемелерге айландырат.';
-
-      document.getElementById('months-title').innerText = isRussian ? 'За 6 Месяцев' : '6 айдын ичинде';
-
-      document.getElementById('por1').innerText = isRussian
-        ? 'По какому порядку вам изучать Frontend программу?'
-        : 'Frontend программасын кайсы тартипте үйрөнүү керек?';
-    });
+      setTimeout(() => appendMessage('Бот', response), 500);
+    }
   </script>
 </body>
 </html>
