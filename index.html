@@ -12,6 +12,21 @@
       margin: 0;
       padding: 0;
     }
+
+    .translate-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #ffc107;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
     body {
       background: #f0f0f0;
       padding-bottom: 100px;
@@ -164,44 +179,70 @@
       padding: 10px 15px;
       cursor: pointer;
     }
+
+    h3 {
+        position: fixed;
+        margin-top: 280px;
+        top: 328px;
+        right: 60px;
+        margin-right: 40px;
+        background-color: aquamarine;
+        padding: 12px;
+        border-radius: 25px;
+        box-shadow: 4px 4px 10px grey;
+        transition: ease 0.5s;
+    }
+
+    h3:hover {
+        box-shadow: 4px 4px 10px white;
+    }
   </style>
 </head>
 <body>
-  <div class="Okurman-text">
+  <div id="main-title" class="Okurman-text">
     <h1>Okurman-IT</h1>
   </div>
+  
 
   <div class="add">
-    <h2>Чему вы научитесь?</h2>
+    <h2  id="learn-title">Чему вы научитесь?</h2>
     <div class="card-container">
       <div class="Js">
         <img src="javascript.png" alt="javascript" />
-        <h4>- JavaScript</h4>
-        <p><span>Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.</p>
+        <h4 id="js-title">- JavaScript</h4>
+        <p id="js-text"><span id="js-why">Зачем учить JavaScript?</span>JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения. Это простой язык для старта и востребованный навык в мире IT.</p>
       </div>
       <div class="Html">
         <img src="html-logo.png" alt="HTML" />
         <h4>- HTML</h4>
-        <p><span>Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!</p>
+        <p id="h-text"><span id="js-why">Зачем учить HTML?</span>HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!</p>
       </div>
       <div class="css">
         <img src="css.png" alt="CSS" />
         <h4>- CSS</h4>
-        <p><span>Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!</p>
+        <p id="css-text"><span id="js-why">Зачем учить CSS?</span>CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!</p>
       </div>
     </div>
-    <h5>HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.</h5>
-    <h2>За 6 Месяцев</h2>
+    <h5 id="tutor">HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.</h5>
+    <h2 id="srok">За 6 Месяцев</h2>
   </div>
 
   <div class="poradok">
-    <h1>По какому порядку вам изучать Frontend программу?</h1>
+    <h1 id="Por">По какому порядку вам изучать Frontend программу?</h1>
     <img id="Por2" src="2025-05-29_20-01-16.png" alt="" />
   </div>
+  
+  <h3 id="help">Привет! Чем могу помочь? -></h3>
+
+  
 
   <script src="https://cdn.botpress.cloud/webchat/v2.5/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2025/05/29/15/20250529151351-FOBFZWP4.js"></script>
       
+      
+  <button class="translate-btn" onclick="toggleLanguage()">Кыргызча</button>
+
+  
 
   <script>
     const chatbox = document.getElementById('chatbox');
@@ -233,5 +274,55 @@
       setTimeout(() => appendMessage('Бот', response), 500);
     }
   </script>
+  <script>
+    let currentLang = 'ru';
+  
+    const translations = {
+      ru: {
+        button: 'Кыргызча',
+        'main-title': 'Okurman-IT',
+        'learn-title': 'Чему вы научитесь?',
+        'js-title': '- JavaScript',
+        'js-why': 'Зачем учить JavaScript?',
+        'js-text': 'JavaScript делает сайты живыми — с ним ты создашь анимации, игры, кнопки и даже полноценные приложения.',
+        'css-text': 'CSS — это стиль и магия внешнего вида. Делает сайты красивыми, адаптивными и живыми. Без него всё было бы серым и скучным!',
+        'h-text': 'HTML — это основа любого сайта. Он помогает размещать текст, картинки, кнопки и другие элементы на странице. Без HTML не будет ни одного веб-сайта!',
+        'tutor': 'HTML, CSS и JavaScript — основа любого сайта. HTML создаёт структуру, CSS — стиль и красоту, JavaScript — интерактив и жизнь. Вместе они превращают идеи в работающие и красивые веб-приложения.',
+        'srok': 'За 6 Месяцев',
+        'por': 'По какому порядку вам изучать Frontend программу?',
+        'help': 'Привет! Чем могу помочь? ->'
+
+      },
+      ky: {
+        button: 'Орусча',
+        'main-title': 'Okurman-IT',
+        'learn-title': 'Эмне үйрөнөсүңөр?',
+        'js-title': '- ЖаваСкрипт',
+        'js-why': 'Эмне үчүн JavaScript үйрөнүү керек?',
+        'js-text': 'JavaScript сайттарды жандуу кылат — сен анимация, оюн, баскыч жана колдонмо түзө аласың.',
+        'css-text': 'CSS бул стиль жана сырткы көрүнүштүн сыйкыры. Вебсайттарды кооз, жооп берүүчү жана жандуу кылат. Ал болбосо, баары боз жана кызыксыз болмок!',
+        'h-text': 'HTML ар кандай веб-сайттын негизи болуп саналат. Бул баракка текстти, сүрөттөрдү, баскычтарды жана башка элементтерди жайгаштырууга жардам берет. HTMLсиз веб-сайт болбойт!',
+        'tutor': 'HTML, CSS жана JavaScript ар кандай веб-сайттын негизи болуп саналат. HTML структураны түзөт, CSS стилди жана сулуулукту жаратат, JavaScript интерактивдүүлүктү жана жашоону жаратат. Алар чогуу идеяларды жумушчу жана кооз веб-тиркемелерге айландырышат.',
+        'srok': '6 Айдын ичинде',
+        'por': 'Frontend программалоону кандай тартипте үйрөнүү керек?',
+        'help': 'Салам! Сизге кантип жардам берсем болот? ->'
+      }
+    };
+  
+    function toggleLanguage() {
+      currentLang = currentLang === 'ru' ? 'ky' : 'ru';
+      const lang = translations[currentLang];
+  
+      for (const id in lang) {
+        if (id === 'button') {
+          document.querySelector('.translate-btn').textContent = lang[id];
+        } else {
+          const el = document.getElementById(id);
+          if (el) el.textContent = lang[id];
+        }
+      }
+    }
+  </script>
+  <h5>Created by Einar 12 years old</h5>
 </body>
 </html>
